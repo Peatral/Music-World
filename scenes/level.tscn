@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=3 uid="uid://gw5gdwknsmy0"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_lhuj8"]
+[ext_resource type="Texture2D" uid="uid://g74l60t7t4x4" path="res://assets/sprites/backgrounds/levels/morning_dew.png" id="2_tbjph"]
+[ext_resource type="PackedScene" uid="uid://obxjthalmx1h" path="res://assets/sprites/target_spinner/target_spinner.ase" id="3_bkdw1"]
+[ext_resource type="TileSet" uid="uid://63g8f14qcg2x" path="res://assets/tileset_puzzle_tiles.tres" id="3_uqu6q"]
+[ext_resource type="AudioStream" uid="uid://cc411ts21l4yu" path="res://assets/audio/music/02 - Morning Dew.mp3" id="4_7aokx"]
+[ext_resource type="Script" path="res://scripts/puzzle_map.gd" id="7_43tjr"]
+
+[sub_resource type="Animation" id="Animation_mx5ij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TuneyMarker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(47, 166)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_tbjph")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:use_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ikwmx"]
+resource_name = "morning_dew"
+length = 78.0
+step = 0.05
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_7aokx")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TuneyMarker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.4, 9.6, 12.8, 14.4, 16, 17.65, 18.35, 19.2, 20.8, 22.4, 23.95, 24.95, 25.6, 26.3, 27.05, 27.9, 29.55, 31.25, 32.6, 33.35, 34.2, 36.65, 38.35, 39.15, 39.95, 41.6, 44.8, 45.6, 46.4, 48, 55.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(60, 120), Vector2(180, 120), Vector2(45, 271), Vector2(120, 271), Vector2(195, 271), Vector2(60, 68), Vector2(198, 162), Vector2(45, 271), Vector2(120, 271), Vector2(195, 271), Vector2(173, 120), Vector2(60, 200), Vector2(120, 271), Vector2(40, 150), Vector2(120, 150), Vector2(200, 150), Vector2(120, 100), Vector2(120, 271), Vector2(40, 150), Vector2(120, 150), Vector2(200, 150), Vector2(120, 60), Vector2(40, 120), Vector2(120, 120), Vector2(200, 120), Vector2(120, 180), Vector2(40, 120), Vector2(120, 120), Vector2(200, 120), Vector2(120, 180), Vector2(40, 120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_tbjph")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:use_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 17.65, 20.8, 24.95, 25.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(17.65, 18.35, 24.95),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.1, 0.5, 0.4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p70jn"]
+_data = {
+"RESET": SubResource("Animation_mx5ij"),
+"morning_dew": SubResource("Animation_ikwmx")
+}
+
+[node name="Level" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_lhuj8")
+use_offset = true
+offset = 0.0
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -5
+texture = ExtResource("2_tbjph")
+centered = false
+
+[node name="TuneyMarker" type="Marker2D" parent="."]
+position = Vector2(47, 166)
+metadata/_edit_group_ = true
+
+[node name="target_spinner" parent="TuneyMarker" instance=ExtResource("3_bkdw1")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p70jn")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="PuzzleTiles" type="TileMap" parent="."]
+position = Vector2(-17, -10)
+tile_set = ExtResource("3_uqu6q")
+format = 2
+layer_0/name = "PuzzleBorders"
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(0, 5, 0, 65536, 65541, 0, 131072, 5, 0, 196608, 65541, 0, 262144, 5, 0, 327680, 65541, 0, 393216, 5, 0, 458752, 65541, 0, 524288, 5, 0, 589824, 65541, 0, 655360, 5, 0, 1, 65541, 0, 65537, 5, 0, 131073, 65541, 0, 196609, 5, 0, 262145, 65541, 0, 327681, 5, 0, 393217, 65541, 0, 458753, 5, 0, 524289, 65541, 0, 589825, 5, 0, 655361, 65541, 0, 2, 5, 0, 65538, 65541, 0, 131074, 5, 0, 196610, 65541, 0, 262146, 5, 0, 327682, 65541, 0, 393218, 5, 0, 458754, 65541, 0, 524290, 5, 0, 589826, 65541, 0, 655362, 5, 0, 3, 65541, 0, 65539, 5, 0, 131075, 65541, 0, 196611, 5, 0, 262147, 65541, 0, 327683, 5, 0, 393219, 65541, 0, 458755, 5, 0, 524291, 65541, 0, 589827, 5, 0, 655363, 65541, 0, 4, 5, 0, 65540, 65541, 0, 131076, 5, 0, 196612, 65541, 0, 262148, 5, 0, 327684, 65541, 0, 393220, 5, 0, 458756, 65541, 0, 524292, 5, 0, 589828, 65541, 0, 655364, 5, 0, 5, 65541, 0, 65541, 5, 0, 131077, 65541, 0, 196613, 5, 0, 262149, 65541, 0, 327685, 5, 0, 393221, 65541, 0, 458757, 5, 0, 524293, 65541, 0, 589829, 5, 0, 655365, 65541, 0, 6, 5, 0, 65542, 65541, 0, 131078, 5, 0, 196614, 65541, 0, 262150, 5, 0, 327686, 65541, 0, 393222, 5, 0, 458758, 65541, 0, 524294, 5, 0, 589830, 65541, 0, 655366, 5, 0)
+layer_1/name = "Background"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = -3
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("7_43tjr")

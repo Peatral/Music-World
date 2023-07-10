@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dq1u32en1nxiq"
+path="res://.godot/imported/Cutscene Bang.wav-0cacc6c82a5bf23bb0a33b6cf11f8a4b.sample"
+
+[deps]
+
+source_file="res://unprocessed_assets/Sounds/Cutscene Bang.wav"
+dest_files=["res://.godot/imported/Cutscene Bang.wav-0cacc6c82a5bf23bb0a33b6cf11f8a4b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

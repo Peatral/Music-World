@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://63g8f14qcg2x"]
+
+[ext_resource type="Texture2D" uid="uid://bma5yj42jkdjm" path="res://assets/sprites/backgrounds/puzzle_tiles/puzzle_tiles_atlas.png" id="1_y0tac"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5imoc"]
+resource_name = "Puzzle Tiles"
+texture = ExtResource("1_y0tac")
+texture_region_size = Vector2i(54, 55)
+use_texture_padding = false
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
+[resource]
+tile_size = Vector2i(38, 40)
+sources/5 = SubResource("TileSetAtlasSource_5imoc")

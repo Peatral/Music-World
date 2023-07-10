@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cr8yw22dufk6q"
+path="res://.godot/imported/11 - Prince Shutter.mp3-f7e980257386d8b61088d3a770ae493b.mp3str"
+
+[deps]
+
+source_file="res://unprocessed_assets/Music/MP3/11 - Prince Shutter.mp3"
+dest_files=["res://.godot/imported/11 - Prince Shutter.mp3-f7e980257386d8b61088d3a770ae493b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

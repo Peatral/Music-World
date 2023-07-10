@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dy2pviobm6206"
+path="res://.godot/imported/Score Counting.wav-cfa2ec0ebd73b7f4426bf07e46f7bac9.sample"
+
+[deps]
+
+source_file="res://unprocessed_assets/Sounds/Score Counting.wav"
+dest_files=["res://.godot/imported/Score Counting.wav-cfa2ec0ebd73b7f4426bf07e46f7bac9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

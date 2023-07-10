@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://di30gdoao5t0r"]
+
+[ext_resource type="PackedScene" uid="uid://obxjthalmx1h" path="res://assets/sprites/target_spinner/target_spinner.ase" id="1_1d4gv"]
+
+[node name="target_spinner" instance=ExtResource("1_1d4gv")]

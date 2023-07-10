@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgkpr1hwd7i5b"]
+
+[ext_resource type="Texture2D" uid="uid://cuwh3qdwk0wm4" path="res://assets/sprites/menu/menu_button.png" id="1_1ep55"]
+[ext_resource type="Script" path="res://scripts/menu_button.gd" id="1_sd4so"]
+[ext_resource type="Texture2D" uid="uid://do6m8n1w667ks" path="res://assets/sprites/menu/play.png" id="2_da7uu"]
+
+[node name="Control" type="Control"]
+texture_filter = 3
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_sd4so")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_right = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_1ep55")
+stretch_mode = 3
+
+[node name="Text" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_da7uu")
+stretch_mode = 3
+
+[connection signal="pressed" from="Background/Text" to="." method="_on_text_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gt4ujqnd2f3e"
+path="res://.godot/imported/06 - Worship the Wild.mp3-6265de4a176ea33574b0d27332938579.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/06 - Worship the Wild.mp3"
+dest_files=["res://.godot/imported/06 - Worship the Wild.mp3-6265de4a176ea33574b0d27332938579.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

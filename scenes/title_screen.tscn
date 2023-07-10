@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8qmcet5a68iy"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_g52co"]
+[ext_resource type="Texture2D" uid="uid://pbrbiru3awm5" path="res://assets/sprites/title/title.png" id="1_l7xq7"]
+[ext_resource type="Texture2D" uid="uid://d1n7tdd6yfbid" path="res://assets/sprites/title/touch_to_play.png" id="2_1uxrx"]
+[ext_resource type="Texture2D" uid="uid://bjgkekm7o6ebb" path="res://assets/sprites/backgrounds/disco/disco_sheet.png" id="2_pql3r"]
+[ext_resource type="AudioStream" uid="uid://bpwu0jtl34h4i" path="res://assets/audio/music/01 - Title Screen.mp3" id="5_jd5qr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agieo"]
+texture = ExtResource("2_pql3r")
+texture_region_size = Vector2i(44, 44)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_75y7r"]
+tile_size = Vector2i(44, 44)
+sources/1 = SubResource("TileSetAtlasSource_agieo")
+
+[node name="Control" type="Control"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g52co")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_75y7r")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 65537, 0, 2, 1, 0, 65538, 131073, 0, 65539, 131073, 0, 131075, 65537, 0, 196611, 131073, 0, 262147, 131073, 0, 327683, 65537, 0, 65536, 65537, 0, 131072, 131073, 0, 196608, 1, 0, 262144, 131073, 0, 327680, 65537, 0, 393216, 131073, 0, 458752, 1, 0, 524288, 131073, 0, 589824, 131073, 0, 65537, 1, 0, 131073, 131073, 0, 196609, 131073, 0, 262145, 1, 0, 327681, 1, 0, 393217, 1, 0, 458753, 131073, 0, 524289, 65537, 0, 589825, 131073, 0, 131074, 131073, 0, 196610, 65537, 0, 262146, 1, 0, 327682, 65537, 0, 393218, 65537, 0, 458754, 1, 0, 524290, 131073, 0, 589826, 65537, 0, 3, 131073, 0, 393219, 131073, 0, 458755, 1, 0, 524291, 1, 0, 589827, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 65537, 0, 196612, 1, 0, 262148, 65537, 0, 327684, 131073, 0, 393220, 65537, 0, 458756, 1, 0, 524292, 65537, 0, 589828, 65537, 0, 5, 65537, 0, 65541, 131073, 0, 131077, 1, 0, 196613, 131073, 0, 262149, 131073, 0, 327685, 1, 0, 393221, 131073, 0, 458757, 1, 0, 524293, 131073, 0, 589829, 1, 0)
+
+[node name="BackgroundUpdater" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l7xq7")
+stretch_mode = 3
+
+[node name="TouchToPlay" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_1uxrx")
+stretch_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jd5qr")
+autoplay = true
+
+[connection signal="timeout" from="BackgroundUpdater" to="." method="fill_random"]
