@@ -1,6 +1,10 @@
 @tool
 extends Control
 
+
+signal pressed
+
+
 @export var text: Texture = preload("res://assets/sprites/menu/play.png"):
 	set(value):
 		text = value
@@ -11,7 +15,6 @@ extends Control
 		background = value
 		$Background.texture = value
 
-signal pressed
 
-func _on_text_pressed():
+func _on_text_pressed() -> void:
 	pressed.emit()

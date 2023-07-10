@@ -1,36 +1,78 @@
+class_name Tuney
 extends Area2D
+
+
+signal was_tapped
+signal was_failed
+
 
 enum Direction {
 	LEFT,
 	SLIGHT_LEFT,
 	CENTER,
 	SLIGHT_RIGHT,
-	RIGHT
+	RIGHT,
 }
+
 
 const animation_directions = [
 	"Left",
 	"Slight Left",
 	"Center",
 	"Slight Right",
-	"Right"
+	"Right",
 ]
+
 
 @export var direction: Direction = Direction.CENTER
 @export var non_looping_anims: Array[String] = []
-var missed = false
-var waiting = false
+
+
+var failed: bool = false
+var waiting: bool = false
+var tapped: bool = false
 
 var _tween: Tween
 
-signal was_tapped
-signal was_missed
 
-func _ready():
+func _ready() -> void:
 	var animplayer: AnimationPlayer = $tuney/AnimationPlayer
 	for anim_name in non_looping_anims:
 		var anim: Animation = animplayer.get_animation(anim_name)
 		anim.loop_mode = Animation.LOOP_NONE
+
+
+func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if not (event is InputEventScreenTouch or event is InputEventMouseButton):
+		return
+	if not event.pressed:
+		return
+	
+	if failed or tapped:
+		return
+	
+	if _tween:
+		_tween.stop()
+	
+	var anim = ""
+	var duration = 0.0
+	
+	if waiting:
+		tapped = true
+		was_tapped.emit()
+		anim = "Tap Normal"
+		duration = get_anim_duration(anim)
+	else:
+		failed = true
+		was_failed.emit()
+		anim = "Zapped"
+		duration = 0.4
+	
+	
+	$tuney/AnimationPlayer.play(anim)
+	_tween = create_tween()
+	_tween.tween_callback(queue_free).set_delay(duration)
+
 
 func setup(from: Vector2, to: Vector2, duration: float, use_offset: bool = false, offset: float = 0.5) -> void:
 	position = from
@@ -57,53 +99,32 @@ func setup(from: Vector2, to: Vector2, duration: float, use_offset: bool = false
 	_tween.tween_callback(fall).set_delay(get_anim_duration("Missed"))
 	_tween.chain().tween_callback(queue_free)
 
+
 func flip() -> void:
 	$tuney/AnimationPlayer.play(flipping_anim_name())
 
+
 func miss() -> void:
-	missed = true
-	was_missed.emit()
+	failed = true
+	was_failed.emit()
 	$tuney/AnimationPlayer.play("Missed")
+
 
 func fall() -> void:
 	$tuney/AnimationPlayer.play("Falling")
 
+
 func get_flip_duration() -> float:
 	return get_anim_duration(flipping_anim_name())
+
 
 func get_anim_duration(anim: String) -> float:
 	return $tuney/AnimationPlayer.get_animation(anim).length
 
+
 func flipping_anim_name() -> String:
 	return "Flipping " + animation_directions[direction]
 
+
 func jumping_anim_name() -> String:
 	return "Jumping " + animation_directions[direction]
-
-
-func _on_input_event(viewport, event, shape_idx):
-	if not (event is InputEventScreenTouch or event is InputEventMouseButton):
-		return
-	if not event.pressed:
-		return
-	if missed:
-		return
-	
-	if _tween:
-		_tween.stop()
-	
-	var anim = ""
-	var duration = 0.0
-	
-	if not waiting:
-		anim = "Zapped"
-		duration = 0.4
-
-	if waiting and not missed:
-		was_tapped.emit()
-		anim = "Tap Normal"
-		duration = get_anim_duration(anim)
-	
-	$tuney/AnimationPlayer.play(anim)
-	_tween = create_tween()
-	_tween.tween_callback(queue_free).set_delay(duration)
