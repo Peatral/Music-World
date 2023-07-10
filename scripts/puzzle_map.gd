@@ -27,7 +27,7 @@ func reveal_random():
 		return
 	
 	var pos = Vector2i(randi_range(0, size.x), randi_range(0, size.y))
-	if revealed_tiles.has(pos):
+	if revealed_tiles.has(pos) or get_cell_atlas_coords(0, pos) == Vector2i(-1, -1):
 		reveal_random()
 	else:
 		var sprite = Sprite2D.new()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://pbrbiru3awm5" path="res://assets/sprites/title/title.png" id="1_l7xq7"]
 [ext_resource type="Texture2D" uid="uid://d1n7tdd6yfbid" path="res://assets/sprites/title/touch_to_play.png" id="2_1uxrx"]
 [ext_resource type="Texture2D" uid="uid://bjgkekm7o6ebb" path="res://assets/sprites/backgrounds/disco/disco_sheet.png" id="2_pql3r"]
-[ext_resource type="AudioStream" uid="uid://bpwu0jtl34h4i" path="res://assets/audio/music/01 - Title Screen.mp3" id="5_jd5qr"]
+[ext_resource type="AudioStream" uid="uid://bpwu0jtl34h4i" path="res://assets/audio/music/title_screen.mp3" id="5_p568j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agieo"]
 texture = ExtResource("2_pql3r")
@@ -60,7 +60,7 @@ texture = ExtResource("2_1uxrx")
 stretch_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_jd5qr")
+stream = ExtResource("5_p568j")
 autoplay = true
 
 [connection signal="timeout" from="BackgroundUpdater" to="." method="fill_random"]

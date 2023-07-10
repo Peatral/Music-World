@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://g74l60t7t4x4" path="res://assets/sprites/backgrounds/levels/morning_dew.png" id="2_tbjph"]
 [ext_resource type="PackedScene" uid="uid://obxjthalmx1h" path="res://assets/sprites/target_spinner/target_spinner.ase" id="3_bkdw1"]
 [ext_resource type="TileSet" uid="uid://63g8f14qcg2x" path="res://assets/tileset_puzzle_tiles.tres" id="3_uqu6q"]
-[ext_resource type="AudioStream" uid="uid://cc411ts21l4yu" path="res://assets/audio/music/02 - Morning Dew.mp3" id="4_7aokx"]
+[ext_resource type="AudioStream" uid="uid://cc411ts21l4yu" path="res://assets/audio/music/world_01_level_01_morning_dew.mp3" id="4_7qirc"]
 [ext_resource type="Script" path="res://scripts/puzzle_map.gd" id="7_43tjr"]
 
 [sub_resource type="Animation" id="Animation_mx5ij"]
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_7aokx")
+"stream": ExtResource("4_7qirc")
 }],
 "times": PackedFloat32Array(0)
 }
