@@ -14,6 +14,7 @@ enum Direction {
 	RIGHT,
 }
 
+const TARGET_SPINNER_SCENE: PackedScene = preload("res://scenes/target_spinner.tscn")
 
 const animation_directions = [
 	"Left",
@@ -31,6 +32,8 @@ const animation_directions = [
 var failed: bool = false
 var waiting: bool = false
 var tapped: bool = false
+
+var target_spinner = null
 
 var _tween: Tween
 
@@ -77,6 +80,13 @@ func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) ->
 func setup(from: Vector2, to: Vector2, duration: float, use_offset: bool = false, offset: float = 0.5) -> void:
 	position = from
 	
+	var marker = TARGET_SPINNER_SCENE.instantiate()
+	marker.position = to
+	marker.z_index = -1
+	get_parent().add_child(marker)
+	was_failed.connect(func(): marker.queue_free())
+	was_tapped.connect(func(): marker.queue_free())
+	
 	var end = Vector2(to.x + (to - from).x * 0.5, 400 + 10)
 	
 	var angle = from.angle_to_point(to) + PI / 2
@@ -98,6 +108,7 @@ func setup(from: Vector2, to: Vector2, duration: float, use_offset: bool = false
 	_tween.tween_callback(miss).set_delay(0.2)
 	_tween.tween_callback(fall).set_delay(get_anim_duration("Missed"))
 	_tween.chain().tween_callback(queue_free)
+	
 
 
 func flip() -> void:

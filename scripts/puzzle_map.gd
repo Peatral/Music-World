@@ -7,8 +7,8 @@ enum Mode {
 }
 
 
-const REVEAL_H: Texture = preload("res://assets/sprites/backgrounds/puzzle_tiles/reveal_h.png")
-const REVEAL_V: Texture = preload("res://assets/sprites/backgrounds/puzzle_tiles/reveal_v.png")
+const REVEAL_H: Texture = preload("res://assets/textures/backgrounds/puzzle_tiles/reveal_h.png")
+const REVEAL_V: Texture = preload("res://assets/textures/backgrounds/puzzle_tiles/reveal_v.png")
 
 
 @export var size: Vector2i = Vector2i(7, 11)

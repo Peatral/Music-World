@@ -1,17 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://dqhupsc0eceqc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2jdxl"]
-[ext_resource type="Texture2D" uid="uid://50fkc5jpjmxq" path="res://assets/sprites/backgrounds/menu/menu.png" id="1_avxlo"]
-[ext_resource type="Texture2D" uid="uid://dsb3bnj268jov" path="res://assets/sprites/backgrounds/menu/banner.png" id="2_yy5i2"]
-[ext_resource type="Texture2D" uid="uid://c5kge0678b3yb" path="res://assets/sprites/menu/headings/mainmenu.png" id="3_xogtv"]
+[ext_resource type="Texture2D" uid="uid://50fkc5jpjmxq" path="res://assets/textures/backgrounds/menu/menu.png" id="2_48dv7"]
+[ext_resource type="Texture2D" uid="uid://dsb3bnj268jov" path="res://assets/textures/backgrounds/menu/banner.png" id="3_g85v0"]
 [ext_resource type="PackedScene" uid="uid://dgkpr1hwd7i5b" path="res://scenes/menu_button.tscn" id="4_e8uug"]
-[ext_resource type="Texture2D" uid="uid://vg7e3ccnsin4" path="res://assets/sprites/menu/button_back.png" id="5_4wun7"]
-[ext_resource type="Texture2D" uid="uid://ddkc0kpfrq3i6" path="res://assets/sprites/menu/jukebox.png" id="5_wqv7c"]
-[ext_resource type="Texture2D" uid="uid://ngshibghiryw" path="res://assets/sprites/menu/menu_button_round.png" id="6_fwb43"]
-[ext_resource type="Texture2D" uid="uid://j2dhwspfiqra" path="res://assets/sprites/menu/instruction.png" id="6_gaxjy"]
-[ext_resource type="Texture2D" uid="uid://dr3pomrc5flo6" path="res://assets/sprites/menu/settings.png" id="7_j1gk8"]
-[ext_resource type="Texture2D" uid="uid://d21pyd2tahr72" path="res://assets/sprites/menu/high_score.png" id="8_55k1h"]
-[ext_resource type="Texture2D" uid="uid://brk4hcqlbb3bf" path="res://assets/sprites/menu/exit.png" id="9_44gn2"]
+[ext_resource type="Texture2D" uid="uid://c5kge0678b3yb" path="res://assets/textures/menu/headings/mainmenu.png" id="4_m7fj3"]
+[ext_resource type="Texture2D" uid="uid://ddkc0kpfrq3i6" path="res://assets/textures/menu/jukebox.png" id="6_y0ef6"]
+[ext_resource type="Texture2D" uid="uid://j2dhwspfiqra" path="res://assets/textures/menu/instruction.png" id="7_txf6d"]
+[ext_resource type="Texture2D" uid="uid://dr3pomrc5flo6" path="res://assets/textures/menu/settings.png" id="8_2e3vw"]
+[ext_resource type="Texture2D" uid="uid://d21pyd2tahr72" path="res://assets/textures/menu/high_score.png" id="9_1e2av"]
+[ext_resource type="Texture2D" uid="uid://brk4hcqlbb3bf" path="res://assets/textures/menu/exit.png" id="10_v6ftn"]
+[ext_resource type="Texture2D" uid="uid://vg7e3ccnsin4" path="res://assets/textures/menu/button_back.png" id="11_d1vhc"]
+[ext_resource type="Texture2D" uid="uid://ngshibghiryw" path="res://assets/textures/menu/menu_button_round.png" id="12_22klp"]
 
 [node name="Control" type="Control"]
 texture_filter = 3
@@ -38,7 +38,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_avxlo")
+texture = ExtResource("2_48dv7")
 
 [node name="BackgroundRight" type="TextureRect" parent="Background"]
 layout_mode = 1
@@ -48,7 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_avxlo")
+texture = ExtResource("2_48dv7")
 flip_h = true
 
 [node name="Banner" type="TextureRect" parent="Background"]
@@ -57,7 +57,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 122.0
 grow_horizontal = 2
-texture = ExtResource("2_yy5i2")
+texture = ExtResource("3_g85v0")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -73,7 +73,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="Heading" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("3_xogtv")
+texture = ExtResource("4_m7fj3")
 stretch_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -93,23 +93,23 @@ layout_mode = 2
 
 [node name="JukeBoxButton" parent="CenterContainer/VBoxContainer" instance=ExtResource("4_e8uug")]
 layout_mode = 2
-text = ExtResource("5_wqv7c")
+text = ExtResource("6_y0ef6")
 
 [node name="InstructionButton" parent="CenterContainer/VBoxContainer" instance=ExtResource("4_e8uug")]
 layout_mode = 2
-text = ExtResource("6_gaxjy")
+text = ExtResource("7_txf6d")
 
 [node name="SettingsButton" parent="CenterContainer/VBoxContainer" instance=ExtResource("4_e8uug")]
 layout_mode = 2
-text = ExtResource("7_j1gk8")
+text = ExtResource("8_2e3vw")
 
 [node name="HighScoreButton" parent="CenterContainer/VBoxContainer" instance=ExtResource("4_e8uug")]
 layout_mode = 2
-text = ExtResource("8_55k1h")
+text = ExtResource("9_1e2av")
 
 [node name="ExitButton" parent="CenterContainer/VBoxContainer" instance=ExtResource("4_e8uug")]
 layout_mode = 2
-text = ExtResource("9_44gn2")
+text = ExtResource("10_v6ftn")
 
 [node name="BackButton" parent="." instance=ExtResource("4_e8uug")]
 custom_minimum_size = Vector2(33, 33)
@@ -120,8 +120,8 @@ anchor_bottom = 1.0
 offset_top = -33.0
 offset_right = 33.0
 grow_vertical = 0
-text = ExtResource("5_4wun7")
-background = ExtResource("6_fwb43")
+text = ExtResource("11_d1vhc")
+background = ExtResource("12_22klp")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

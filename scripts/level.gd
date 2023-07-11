@@ -2,7 +2,6 @@ class_name Level
 extends Node2D
 
 
-const TARGET_SPINNER_SCENE: PackedScene = preload("res://scenes/target_spinner.tscn")
 const TUNEY_SCENE: PackedScene = preload("res://scenes/tuney.tscn")
 
 
@@ -61,15 +60,7 @@ func get_tuney_start_position(to: Vector2, use_off: bool, off: float) -> Vector2
 	return Vector2(240 * off if use_off else to.x, 400)
 
 
-func spawn_tuney(from: Vector2, to: Vector2, duration: float, show_marker: bool = true, bounce: bool = false) -> void:
-	var marker
-	if show_marker:
-		marker = TARGET_SPINNER_SCENE.instantiate()
-		marker.position = to
-		marker.z_index = -1
-		add_child(marker)
-		create_tween().tween_callback(marker.queue_free).set_delay(duration)
-	
+func spawn_tuney(from: Vector2, to: Vector2, duration: float, bounce: bool = false) -> void:
 	var tuney = TUNEY_SCENE.instantiate()
 	add_child(tuney)
 	tuney.was_tapped.connect(_tuney_tapped)

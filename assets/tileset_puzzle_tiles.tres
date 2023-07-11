@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://63g8f14qcg2x"]
 
-[ext_resource type="Texture2D" uid="uid://bma5yj42jkdjm" path="res://assets/sprites/backgrounds/puzzle_tiles/puzzle_tiles_atlas.png" id="1_y0tac"]
+[ext_resource type="Texture2D" uid="uid://bma5yj42jkdjm" path="res://assets/textures/backgrounds/puzzle_tiles/puzzle_tiles_atlas.png" id="1_y0tac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5imoc"]
 resource_name = "Puzzle Tiles"
